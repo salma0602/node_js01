@@ -23,4 +23,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: salma0602/node-api:latest
+          tags: salma9345801442/node_js01:latest
