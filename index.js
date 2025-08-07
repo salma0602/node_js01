@@ -1,11 +1,12 @@
-const express = require('express');
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('Hello from Node.js app!');
-});
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
-
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-js-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: node-js-app
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
