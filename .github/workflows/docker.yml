@@ -34,6 +34,6 @@ jobs:
         script: |
           docker pull salma9345801442/node_js01:latest
           kubectl apply -f ~/node_js01/k8s/deployment.yaml
-          kubectl apply -f ~/node_js01/k8s/service.yaml
+          kubectl apply -f ~/node_js01/k8s/service.yml
           kubectl get pods
           kubectl get svc
