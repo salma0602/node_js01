@@ -32,11 +32,8 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          # Optional: Pull latest image (if needed)
           docker pull salma9345801442/node_js01:latest
-
-          # Apply Kubernetes deployment
           kubectl apply -f ~/node_js01/k8s/deployment.yaml
-
-          # Check deployment status
+          kubectl apply -f ~/node_js01/k8s/service.yaml
           kubectl get pods
+          kubectl get svc
