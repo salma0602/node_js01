@@ -1,12 +1,11 @@
-apiVersion: v1 
-kind: Service
-metadata:
-  name: node-js-app
-spec:
-  type: NodePort
-  selector:
-    app: node-js-app
-  ports:
-    - protocol: TCP
-      port: 3000
-      targetPort: 3000
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello from Node.js app!');
+});
+
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
+});
